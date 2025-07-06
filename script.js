@@ -1,4 +1,3 @@
-// const apiKey = "f4adfc525331c44d54e6cf496ff8301c";
 const apiUrl = "http://localhost:3000/weather?city=";
 
 const searchBox = document.querySelector(".search-input");
