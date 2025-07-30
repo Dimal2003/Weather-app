@@ -20,6 +20,10 @@ app.get("/weather", async (req, res) => {
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
+    console.log("API response:", data); // Log the API response for debugging
+    if (data.cod === "404" || data.cod === 404) {
+      return res.status(404).json({ error: "City not found" });
+    }
     res.json(data);
   } catch (error) {
     res.status(500).json({ error: "Failed to fetch weather data" });
